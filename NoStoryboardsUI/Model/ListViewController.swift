@@ -65,6 +65,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.accessoryView = switchView
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
+    }
    
     @objc func switchDIdChange(_ sender: UISwitch) {
         print("sender is \(sender.tag)")
