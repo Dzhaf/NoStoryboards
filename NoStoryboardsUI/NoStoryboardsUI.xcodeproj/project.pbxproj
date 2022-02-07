@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F1AFB7927B16814008E29C7 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1AFB7827B16814008E29C7 /* ListTableViewCell.swift */; };
 		5FA8E42D279F5B3C00707CB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA8E42C279F5B3C00707CB6 /* AppDelegate.swift */; };
 		5FA8E42F279F5B3C00707CB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA8E42E279F5B3C00707CB6 /* SceneDelegate.swift */; };
 		5FA8E436279F5B3D00707CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FA8E435279F5B3D00707CB6 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F1AFB7827B16814008E29C7 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		5FA8E429279F5B3B00707CB6 /* NoStoryboardsUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoStoryboardsUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FA8E42C279F5B3C00707CB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FA8E42E279F5B3C00707CB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				5FA8E440279F681D00707CB6 /* ListViewController.swift */,
+				5F1AFB7827B16814008E29C7 /* ListTableViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FA8E42D279F5B3C00707CB6 /* AppDelegate.swift in Sources */,
+				5F1AFB7927B16814008E29C7 /* ListTableViewCell.swift in Sources */,
 				5FA8E42F279F5B3C00707CB6 /* SceneDelegate.swift in Sources */,
 				5FA8E441279F681D00707CB6 /* ListViewController.swift in Sources */,
 			);

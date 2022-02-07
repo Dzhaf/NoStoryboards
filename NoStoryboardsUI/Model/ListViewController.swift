@@ -26,7 +26,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         myTableView = UITableView(frame: CGRect(x: 0, y: 0, width: displayWidth, height: displayHeight))
         myTableView.backgroundColor = .clear
-        myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
+        myTableView.register(ListTableViewCell.self, forCellReuseIdentifier: "MyCell")
         myTableView.rowHeight = 65
         myTableView.dataSource = self
         myTableView.delegate = self
@@ -51,18 +51,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
        
-        cell.layer.cornerRadius = 10
-        cell.clipsToBounds = true
-        cell.layer.borderWidth = 0.1
-        cell.backgroundColor = UIColor.white
+    
         cell.textLabel!.text = "\(myArray[indexPath.row])"
-        cell.textLabel?.adjustsFontSizeToFitWidth = true
-        let switchView = UISwitch(frame: .zero)
-        switchView.setOn(false, animated: true)
-        switchView.onTintColor = .black
-        switchView.tag = indexPath.row
-        switchView.addTarget(self, action: #selector(self.switchDIdChange(_:)), for: .valueChanged)
-        cell.accessoryView = switchView
+
         return cell
     }
     
