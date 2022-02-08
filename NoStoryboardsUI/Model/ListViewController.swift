@@ -49,7 +49,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! ListTableViewCell
        
     
         cell.textLabel!.text = "\(myArray[indexPath.row])"
