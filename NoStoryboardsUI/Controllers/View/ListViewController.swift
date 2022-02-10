@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ListViewPresenterProtocol {
+   
+    
+    
+    private let presenter = ListViewPresenter()
     
     private let myArray = ["Время намаза", "Все новости", "Новости моего города", "Новые аудио", "Новые книги", "Начало и окончание месяца Рамадан", "Начало месяца Хаджа", "О постах в понедельние и четверг", "Другие уведомления", "Открыть в настройках"]
     
@@ -18,6 +22,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.delegate = self
         
         let displayWidth: CGFloat = self.view.frame.width
         let displayHeight: CGFloat = self.view.frame.height
@@ -50,15 +55,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! ListTableViewCell
-       
-    
         cell.textLabel!.text = "\(myArray[indexPath.row])"
-
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        presenter.update(indexPath: indexPath)
 
     }
    
@@ -67,7 +71,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
    
-   
+    func reloadData(string: String) {
+        let alert = UIAlertController(title: nil, message: string, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
+    }
 
     
 }

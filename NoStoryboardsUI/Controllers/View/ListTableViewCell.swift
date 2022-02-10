@@ -18,6 +18,7 @@ class ListTableViewCell: UITableViewCell {
         self.clipsToBounds = true
         self.layer.borderWidth = 0.1
         self.accessoryView = cellSwitch
+        
         self.textLabel?.numberOfLines = 0
         self.textLabel?.font = .systemFont(ofSize: 16)
         addSubview(cellSwitch)
